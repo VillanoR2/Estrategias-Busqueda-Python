@@ -20,5 +20,5 @@ Grafo = {'Arad':[('Timisoara',118),('Sibiu',140),('Zerind',75)],
         'Iasi':[('Neamt',87),('Vaslui',92)],
         'Vaslui':[('Iasi',92),('Urziceni',142)],
         'Hirsova':[('Urziceni',98),('Eforie',86)],
-        'Eforie':[('Hirsova',86)],
+        'Eforie':[('Hirsova',86)]
         }
