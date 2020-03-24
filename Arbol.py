@@ -4,17 +4,17 @@ class Arbol:
         self.valor = valor
 
     def añadir_hijo(self, valor, valorPadre):
-        subarbol = buscarSubarbol(self, valorPadre)
-        subarbol.hijos.append(Arbol(valor))
+        arbol_padre = buscar_subarbol(self, valorPadre)
+        arbol_padre.hijos.append(Arbol(valor))
 
-    def buscarSubarbol(self, elemento):
-        if self.elemento == elemento:
-            return self
+def buscar_subarbol(arbol, elemento):
+    if arbol.elemento == elemento:
+        return arbol
 
-        for hijo in self.hijos:
-            arbolBuscado = buscarSubarbol(hijo, valor)
-            if (arbolBuscado != None):
-                return arbolBuscado
+    for hijo in arbol.hijos:
+          arbol_buscado = buscar_subarbol(hijo, valor)
+          if (arbol_buscado != None):
+             return arbol_buscado
         
-        return None
+     return None
         

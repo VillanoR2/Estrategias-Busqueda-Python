@@ -30,3 +30,4 @@ if __name__ == '__main__':
     mi_arbol.añadir_hijo('hijo','pipo')
 
     print(mi_arbol.hijos[0].valor)
+    print('done')
