@@ -3,18 +3,34 @@ class Arbol:
         self.hijos = []
         self.valor = valor
 
-    def añadir_hijo(self, valor, valorPadre):
-        arbol_padre = buscar_subarbol(self, valorPadre)
-        arbol_padre.hijos.append(Arbol(valor))
+    def imprimir(self, nivel = 1):
+        i = 1
+        while i < nivel:
+            print('\t', end = '')
+            i = i +1
+        
+        print(self.valor)
 
-def buscar_subarbol(arbol, elemento):
-    if arbol.elemento == elemento:
+        for hijo in self.hijos:
+            hijo.imprimir(nivel + 1)
+
+
+    def add(self, valor_padre, valor_hijo):
+        padre = self.buscar(valor_padre)
+        padre.hijos.append(Arbol(valor_hijo))
+
+    def buscar(self, valor_buscado):
+        return buscarF(self, valor_buscado)
+
+
+def buscarF(arbol, valor_buscado):
+    if (arbol.valor == valor_buscado):
         return arbol
-
-    for hijo in arbol.hijos:
-          arbol_buscado = buscar_subarbol(hijo, valor)
-          if (arbol_buscado != None):
-             return arbol_buscado
-        
-     return None
-        
+    else:
+        for hijo in arbol.hijos:
+            
+            resultado = buscarF(hijo, valor_buscado)
+            if (resultado is not None):
+                return resultado
+            
+    return None
