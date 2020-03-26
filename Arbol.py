@@ -1,7 +1,12 @@
 class Arbol:
-    def __init__(self,valor):
+    def __init__(self,valor, camino = None):
         self.hijos = []
         self.valor = valor
+        if camino is None:
+            self.camino = []
+        else:
+            self.camino = camino
+
 
     def imprimir(self, nivel = 1):
         i = 1
@@ -17,7 +22,11 @@ class Arbol:
 
     def añadir(self, valor_padre, valor_hijo):
         padre = self.buscar(valor_padre)
-        padre.hijos.append(Arbol(valor_hijo))
+        camino = padre.camino
+        
+        if camino is not None:
+            camino.append(valor_hijo)
+        padre.hijos.append(Arbol(valor_hijo, camino))
 
     def buscar(self, valor_buscado):
         return buscarF(self, valor_buscado)
