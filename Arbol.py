@@ -15,7 +15,7 @@ class Arbol:
             hijo.imprimir(nivel + 1)
 
 
-    def add(self, valor_padre, valor_hijo):
+    def añadir(self, valor_padre, valor_hijo):
         padre = self.buscar(valor_padre)
         padre.hijos.append(Arbol(valor_hijo))
 
